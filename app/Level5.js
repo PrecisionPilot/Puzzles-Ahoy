@@ -20,7 +20,7 @@ export default function Level5( {nextLevel} ) {
     }
     else if (status === "Overthinking ...") {
       setTimeout(() => {
-        Alert.alert("Recovering", "You see, after getting that job offer, I was wondering if you're interested in another kind of offer.", [
+        Alert.alert("Recovering", "You see, after getting that job offer (well kind of), I was wondering if you're interested in another kind of offer.", [
           {text: "Mhm", onPress: () => setStatus("Superthinking ...")},
         ])
       }, 2000)
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "center", 
     alignItems: "center",
     position: "absolute",
-    top: 50,
+    top: 100,
   },
   text: {
     color: "orange",
