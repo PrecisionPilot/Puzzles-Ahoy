@@ -15,7 +15,7 @@ export default function Level3( {nextLevel} ) {
 
   return (
     <>
-      <Image style={styles.image} source={require('./Assets/Vectors.png')} />
+      <Image style={styles.image} source={require('./Assets/Math.png')} />
       <View style={styles.submission}>
         <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1 }} placeholder="Answer" onChangeText={setInput} />
         <Button title="Submit" onPress={handleSubmit} />
@@ -26,7 +26,7 @@ export default function Level3( {nextLevel} ) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 300,
+    width: 350,
     height: 300,
     alignSelf: "center",
     position: "absolute",
