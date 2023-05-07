@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Alert, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, View, Alert, Image, TextInput, Button, Vibration } from 'react-native';
 
 export default function Level4( {nextLevel} ) {
 
   const executePlan = () => {
-    nextLevel() 
+    Vibration.vibrate();
+    nextLevel()
   }
 
   return (

@@ -13,23 +13,23 @@ export default function Level5( {nextLevel} ) {
     }
     else if (status === "Recovering ...") {
       setTimeout(() => {
-        Alert.alert("Recovery", "To initiate the recovery process, I'm going to need to ask you a question", [
+        Alert.alert("Recovery", "To initiate the recovery process, I'm going to need to ask you a question.", [
           {text: "Ok", onPress: () => setStatus("Overthinking ...")},
         ])
       }, 1000)
     }
     else if (status === "Overthinking ...") {
       setTimeout(() => {
-        Alert.alert("Recovering", "You see, we've known for a while now, and I don't think there's any better time for this", [
+        Alert.alert("Recovering", "You see, after getting that job offer, I was wondering if you're interested in another kind of offer.", [
           {text: "Mhm", onPress: () => setStatus("Superthinking ...")},
         ])
       }, 2000)
     }
     else if (status === "Superthinking ...") {
       setTimeout(() => {
-        Alert.alert("Coping", "Will you go to prom with me", [
-          {text: "No", onPress: () => no()},
-          {text: "Yes", onPress: () => yes()},
+        Alert.alert("Coping", "As friends, Will you go out to prom with me?", [
+          {text: "No", onPress: no},
+          {text: "Yes", onPress: yes},
         ])
       }, 4000)
     }
@@ -39,10 +39,7 @@ export default function Level5( {nextLevel} ) {
     // Confetti
   }
   const no = () => {
-    Alert.alert("Coping", "Just as friends?", [
-      {text: "Nope" },
-      {text: "Sure" },
-    ])
+    // Sadness
   }
 
   return (
