@@ -1,28 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TouchableWithoutFeedback, Alert, SafeAreaView } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Level1 from './app/Level1';
+import Level2 from './app/Level2';
+import Level3 from './app/Level3';
 
 export default function App() {
-  console.log("Hello world")
+  const [level, setLevel] = React.useState(1);
+  const nextLevel = () => {
+    setLevel(level + 1);
+  }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Button title="Hit on me" onPress={() => { Alert.alert("Alert!", "If I'm left single again, will (can) you go to prom with me this june?", [
-        { text: "Yes"},
-        { text: "No"}
-      ]) }} />
-    </SafeAreaView>
-  );
+    <View style={styles.container}>
+      { level === 1 ? <Level1 nextLevel={nextLevel}/> : null }
+      { level === 2 ? <Level2 nextLevel={nextLevel}/> : null }
+      { level === 3 ? <Level3 nextLevel={nextLevel}/> : null }
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "cadetblue",
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width: 1280,
-    height: 720,
   }
-});
+})
