@@ -8,7 +8,7 @@ export default function Level2( {nextLevel} ) {
     // Check if the answer is correct
     // If it is, go to next level
     // If it isn't, do nothing
-    if (input == 11) {
+    if (input == 18) {
       Alert.alert("You win!", "Yeeeehawwwww", [{text: "Next Level", onPress: nextLevel}])
     }
   }
