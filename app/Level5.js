@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Text, StyleSheet, View, Alert, BackHandler} from 'react-native';
+import { ActivityIndicator, Text, StyleSheet, View, Alert, BackHandler, Vibration } from 'react-native';
 
 export default function Level5( {nextLevel} ) {
   const [status, setStatus] = useState("")
@@ -38,6 +38,7 @@ export default function Level5( {nextLevel} ) {
   
   const yes = () => {
     // Confetti
+    Vibration.vibrate()
     setStatus("Recovered!")
     setTimeout(() => {BackHandler.exitApp()}, 4000)
     Alert.alert("Success!", "Software has successfully recovered! 🎉", [
@@ -46,6 +47,7 @@ export default function Level5( {nextLevel} ) {
   }
   const no = () => {
     // Sadness
+    Vibration.vibrate()
     setStatus("Failed to recover")
     setTimeout(() => {BackHandler.exitApp()}, 4000)
     Alert.alert("Oh no!", "Software has failed to recover. \nPlease try again", [
