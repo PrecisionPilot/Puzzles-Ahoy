@@ -37,6 +37,7 @@ export default function Level5( {nextLevel} ) {
   
   const yes = () => {
     // Confetti
+    setTimeout(() => {BackHandler.exitApp()}, 1000)
     Alert.alert("Success!", "Software has successfully recovered! 🎉", [
       {text: "Ok"}
     ])
