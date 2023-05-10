@@ -20,7 +20,7 @@ export default function Level5( {nextLevel} ) {
     }
     else if (status === "Overthinking ...") {
       setTimeout(() => {
-        Alert.alert("Recovering", "You see, after being pen-pals for a while, let's put a shrink to those miles and try something new for a smile ✨", [
+        Alert.alert("Recovering", "You see, after accepting that job offer, I was wondering if you were interested in accepting another kind of offer.", [
           {text: "Mhm", onPress: () => setStatus("Superthinking ...")},
         ])
       }, 2000)
@@ -37,14 +37,16 @@ export default function Level5( {nextLevel} ) {
   
   const yes = () => {
     // Confetti
-    setTimeout(() => {BackHandler.exitApp()}, 1000)
+    setStatus("Recovered!")
+    setTimeout(() => {BackHandler.exitApp()}, 4000)
     Alert.alert("Success!", "Software has successfully recovered! 🎉", [
       {text: "Ok"}
     ])
   }
   const no = () => {
     // Sadness
-    setTimeout(() => {BackHandler.exitApp()}, 1000)
+    setStatus("Failed to recover")
+    setTimeout(() => {BackHandler.exitApp()}, 4000)
     Alert.alert("Oh no!", "Software has failed to recover. \nPlease try again", [
       {text: "Ok"}
     ])
