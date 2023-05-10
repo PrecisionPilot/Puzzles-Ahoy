@@ -20,6 +20,7 @@ export default function Level5( {nextLevel} ) {
     }
     else if (status === "Overthinking ...") {
       setTimeout(() => {
+        // You see, after being pen-pals for a while, let's put a shrink to those miles and try something new for a smile ✨
         Alert.alert("Recovering", "You see, after accepting that job offer, I was wondering if you were interested in accepting another kind of offer.", [
           {text: "Mhm", onPress: () => setStatus("Superthinking ...")},
         ])
