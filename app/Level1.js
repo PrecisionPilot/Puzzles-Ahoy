@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Alert } from 'react-native';
 import Circle from './Circle';
 
+// import Cupid from './Assets/Cupid.mp3';
+
+
 export default function Level1( {nextLevel} ) {
   // Create random positions such that the circles aren't touching
   // Make circles in an arrange ment of 3x3
@@ -9,6 +12,8 @@ export default function Level1( {nextLevel} ) {
   const [clicks, setClicks] = React.useState([false, false, false, false, false, false, false, false, false]);
 
   useEffect(() => {
+    // setTimeout(() => {new Audio(Cupid).play()}, 1000)
+
     // Check if all circles have been clicked
     if (clicks.every((elem) => elem === true)) {
       Alert.alert("You win!", "Yeeeehawwwww", [{text: "Next Level", onPress: nextLevel}])
