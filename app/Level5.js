@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Text, StyleSheet, View, Alert} from 'react-native';
+import { ActivityIndicator, Text, StyleSheet, View, Alert, BackHandler, Vibration } from 'react-native';
 
 export default function Level5( {nextLevel} ) {
   const [status, setStatus] = useState("")
@@ -20,14 +20,15 @@ export default function Level5( {nextLevel} ) {
     }
     else if (status === "Overthinking ...") {
       setTimeout(() => {
-        Alert.alert("Recovering", "You see, after getting that job offer (well kind of), I was wondering if you're interested in another kind of offer.", [
+        // You see, after being pen-pals for a while, let's put a shrink to those miles and try something new for a smile ✨
+        Alert.alert("Recovering", "You see, after getting that job offer (kind of), I was wondering if you were interested in another kind of offer.", [
           {text: "Mhm", onPress: () => setStatus("Superthinking ...")},
         ])
       }, 2000)
     }
     else if (status === "Superthinking ...") {
       setTimeout(() => {
-        Alert.alert("Coping", "As friends, Will you go out to prom with me?", [
+        Alert.alert("Coping", "Will you go out to prom with me?", [
           {text: "No", onPress: no},
           {text: "Yes", onPress: yes},
         ])
@@ -37,9 +38,21 @@ export default function Level5( {nextLevel} ) {
   
   const yes = () => {
     // Confetti
+    Vibration.vibrate()
+    setStatus("Recovered!")
+    setTimeout(() => {BackHandler.exitApp()}, 4000)
+    Alert.alert("Success!", "Software has successfully recovered! 🎉", [
+      {text: "Ok"}
+    ])
   }
   const no = () => {
     // Sadness
+    Vibration.vibrate()
+    setStatus("Failed to recover")
+    setTimeout(() => {BackHandler.exitApp()}, 4000)
+    Alert.alert("Oh no!", "Software has failed to recover. \nPlease try again", [
+      {text: "Ok"}
+    ])
   }
 
   return (

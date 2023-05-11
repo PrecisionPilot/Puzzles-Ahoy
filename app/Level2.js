@@ -17,7 +17,7 @@ export default function Level2( {nextLevel} ) {
     <>
       <Image style={styles.image} source={require('./Assets/Puzzle.jpg')} />
       <View style={styles.submission}>
-        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1 }} placeholder="Answer" onChangeText={setInput} />
+        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1 }} placeholder="Watermelons?" onChangeText={setInput} />
         <Button title="Submit" onPress={handleSubmit} />
       </View>
     </>
